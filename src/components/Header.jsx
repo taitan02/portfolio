@@ -6,11 +6,10 @@ function Header() {
       <div className="flex justify-between items-center h-full">
         <div>logo</div>
         <div className="hidden md:flex text-white gap-x-5 pr-4">
-          <a href="/" className="px-4 py-2">
+          <a href="#about" className="px-4 py-2">
             About
           </a>
-          <div className="px-4 py-2">Experience</div>
-          <div className="px-4 py-2">Projects</div>
+          <a href="#project" className="px-4 py-2">Projects</a>
           <div className="px-4 py-2">Contact</div>
           <a
             href={myCV}
