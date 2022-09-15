@@ -222,7 +222,7 @@ function Home() {
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://taitan02.github.io/matching-game/"
+                      href="https://taitan02.github.io/simple-music-player/"
                       className="relative px-10 py-3 bg-gradient-to-r from-[#970590] to-[#74c8f8] rounded-xl group"
                     >
                       <span className="text-lg text-white font-semibold">
