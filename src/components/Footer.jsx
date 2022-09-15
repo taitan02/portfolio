@@ -1,7 +1,10 @@
+import { memo } from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
+import {Zoom} from "react-reveal"
 function Footer() {
   return (
+    <Zoom>
     <div className="flex justify-center space-x-5 py-5" id="contact">
       <a
         target="_blank"
@@ -17,7 +20,8 @@ function Footer() {
         <FaFacebookSquare size={50} className="hover:text-blue-700" />
       </a>
     </div>
+    </Zoom>
   );
 }
 
-export default Footer;
+export default memo(Footer);
