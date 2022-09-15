@@ -2,7 +2,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { FaFacebookSquare } from "react-icons/fa";
 function Footer() {
   return (
-    <div className="flex justify-center space-x-5 py-10" id="contact">
+    <div className="flex justify-center space-x-5 py-5" id="contact">
       <a
         target="_blank"
         rel="noreferrer"

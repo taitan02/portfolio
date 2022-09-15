@@ -1,21 +1,31 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Sidebar from "../components/Sidebar";
 import { infor } from "../information";
 import myPic from "../assets/images/myPic.jpg";
 import matchingGame from "../assets/images/matching-game.png";
 import simpleMusic from "../assets/images/simple-music-player.png";
 import { AiFillCaretRight, AiFillGithub } from "react-icons/ai";
+
+import { useState } from "react";
 function Home() {
+  const [showSidebar, setShowSidebar] = useState(false);
   return (
     <div className="bg-[#0a192f] pt-20">
-      <Header />
-      <div className="py-20">
+      <Header showSidebar={() => setShowSidebar(true)} />
+      {showSidebar && (
+        <Sidebar
+          onClose={() => setShowSidebar(false)}
+          showSidebar={showSidebar}
+        />
+      )}
+      <div className="pt-20 pb-10">
         {/**
          * @description Introduce section
          */}
         <div className="container flex flex-col lg:flex-row px-2 md:px-14">
           <div className="flex flex-col gap-y-4 text-white">
-            <h3 className="text-primary text-lg">Hi, my name is</h3>
+            <h3 className="text-primary text-lg lg:text-xl">Hi, my name is</h3>
             <h1 className="text-7xl font-bold text-[#ccd6f6]">
               Nguyen Tan Tai
             </h1>
@@ -24,7 +34,7 @@ function Home() {
               This is my portfolio, where I share projects i've been working on
             </h3>
           </div>
-          <div>Hình</div>
+          <div></div>
         </div>
         {/**
          * @description About me section
@@ -80,7 +90,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="border-primary border-[3px] rounded-full max-w-[400px] lg:max-w-none">
+            <div className="border-primary border-[3px] rounded-full max-w-[350px] lg:max-w-screen-sm">
               <img
                 src={myPic}
                 alt="my-pic"
@@ -106,8 +116,8 @@ function Home() {
           </div>
           {/* projects content */}
           {/* project 1 */}
-          <div className="py-32">
-            <div className="flex flex-col lg:flex-row space-x-2 space-y-5 mx-auto">
+          <div className="py-10 lg:py-32">
+            <div className="flex flex-col lg:flex-row space-x-2 space-y-5 mx-auto items-center">
               <div className="w-full lg:w-3/4 order-1 lg:order-2 ">
                 <img
                   src={matchingGame}
@@ -158,22 +168,24 @@ function Home() {
           </div>
           {/* project 2 */}
 
-          <div className="py-32">
-            <div className="flex flex-col lg:flex-row space-x-5 space-y-5 mx-auto">
+          <div className="py-10 lg:py-32">
+            <div className="flex flex-col lg:flex-row space-x-2 space-y-5 mx-auto items-center">
               <div className="w-full lg:w-3/4">
                 <img src={simpleMusic} alt="simple-music-player" />
               </div>
               <div>
                 <h1 className="inline text-4xl font-bold text-transparent bg-gradient-to-r from-[#970590] to-[#74c8f8] bg-clip-text">
-                  Simple-music-player
+                  Simple music player
                 </h1>
                 <div className="">
                   <div className="relative w-full bg-[#112240] px-4 py-10 text-subText mt-10 mb-5 rounded-xl">
                     <div className="absolute top-0 text-white font-medium border-fuchsia-800 border -translate-y-1/2 px-2 py-[2px]">
                       Description
                     </div>
-                    <span className="text-lg">
-                      Simply to find all pairs of the same pictures hidden
+                    <span className="text-lg whitespace-pre-line">
+                      {
+                        "Play your favorite music.\n It has some features like play next song, pause, play random songs"
+                      }
                     </span>
                   </div>
                 </div>
