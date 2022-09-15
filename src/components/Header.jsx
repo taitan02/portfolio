@@ -10,7 +10,7 @@ function Header() {
             About
           </a>
           <a href="#project" className="px-4 py-2">Projects</a>
-          <div className="px-4 py-2">Contact</div>
+          <a href="#contact" className="px-4 py-2">Contact</a>
           <a
             href={myCV}
             target="_blank"
