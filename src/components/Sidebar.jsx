@@ -1,9 +1,13 @@
 import myCV from "../assets/pdf/Fresher-Frontend_NguyenTanTai.pdf";
 import { MdOutlineCancelPresentation } from "react-icons/md";
+import {useRef, useState, memo} from "react"
 function Sidebar({ onClose,showSidebar }) {
+  // const ele = useRef()
+
   return (
-    <div className="fixed inset-0 bg-slate-500 bg-opacity-40 z-30">
-      <div className="absolute right-0 top-0 h-full w-4/5 sm:w-1/3 lg:h-1/5 bg-[#112240] z-50 animate-sidebar_in" >
+    // <div className={`fixed inset-0 bg-slate-500 bg-opacity-40 z-30 ${showSidebar?'translate-x-0':'translate-x-full delay-300'}`} ref={ele}>
+      <div className={`fixed  ${showSidebar?' right-0':'-right-full'} top-0 h-full w-4/5 sm:w-1/3 lg:h-1/5 bg-[#112240] z-50  duration-500`} >
+        {/* <div className={`absolute inset-0 bg-slate-500 bg-opacity-40 z-30 ${showSidebar?'block':'hidden'}`}> */}
         <div className="flex justify-end items-center h-20 border-b">
           <MdOutlineCancelPresentation
             size={50}
@@ -45,8 +49,8 @@ function Sidebar({ onClose,showSidebar }) {
           </div>
         </div>
       </div>
-    </div>
+// </div>
   );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

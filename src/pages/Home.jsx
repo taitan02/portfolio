@@ -10,12 +10,11 @@ import { GiGraduateCap } from "react-icons/gi";
 import { Fade, Bounce } from "react-reveal";
 import { useState } from "react";
 function Home() {
-  console.log("a");
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <div className="bg-[#0a192f] pt-20">
       <Header showSidebar={() => setShowSidebar(true)} />
-      {showSidebar && (
+      {true && (
         <Sidebar
           onClose={() => setShowSidebar(false)}
           showSidebar={showSidebar}
